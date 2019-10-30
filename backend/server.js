@@ -1,10 +1,13 @@
 //including expresss, body-parser and mysql packages
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
+
 
 //initialising express package
 var app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 var mysql = require('mysql');
 
@@ -36,6 +39,14 @@ app.post("/register", function(req, res) {
         console.log(result);
     });
     res.send("Got");
+})
+
+app.get("/reg", function(req, res) {
+    con.query(`INSERT INTO students VALUES('${req.query.username}', '${req.query.password}', '${req.query.phone}', '${req.query.dept}')`, function(err,result){
+        if(err) throw err;
+        console.log(result);
+    });
+    res.send("Recieved");
 })
 
 app.listen(3000, function(){
