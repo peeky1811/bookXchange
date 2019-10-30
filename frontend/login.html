@@ -1,104 +1,137 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <style>
-        /* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
+  <title>BOOK EXCHANGE PORTAL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+    }
 
-/* Full-width inputs */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0px 22px 0px; /*top right bottom left*/
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
+    .login{
+      float: left;
+      width: 30%;
+    }
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+    .imgcontainer{
+      opacity: 1;
+      float: left;
+      width:70%;
+      overflow: hidden;
+    }
 
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
+    form {
+      /* margin: 10px 27px 5px 880px; */
+      border: 3px solid #f1f1f1;
+      padding: 0px 5px 10px 15px;
+    }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
+    .input-field {
+      width: 90%;
+      padding: 12px 20px 12px 50px;
+      /* margin: 5px 0px 8px; */
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-/* Center the avatar image inside this container */
-/*.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}*/
 
-/* Avatar image */
-/*img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}*/
+    .input-icons i {
+      position: absolute;
+      padding: 18px 10px 0px 0px;
+    }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
+    .icon {
+      padding: 10px;
+      color: rgb(11, 0, 165);
+      min-width: 50px;
+      text-align: center;
+    }
 
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
+    button {
+      font-family: "Comic Sans MS", Georgia, 'Times New Roman', Times, serif;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 5px;
+      margin: 8px 0px 5px;
+      border: none;
+      cursor: pointer;
+      width: 18%;
+    }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
-    </style>
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .container {
+      font-family: "Comic Sans MS", Georgia, 'Times New Roman', Times, serif;
+      padding: 16px 16px 16px 3px;
+    }
+
+    span.pwd {
+      font-size: 15px;
+    }
+
+    .signup {
+      margin-top: 15px;
+      font-style: italic;
+      color: #ad0c0c
+    }
+
+    .sup {
+      font-family: "Comic Sans MS", Georgia, 'Times New Roman', Times, serif;
+      background-color: #f44336;
+      color: white;
+      padding: 10px 5px;
+      margin-bottom: 4px;
+      margin-left: 5px;
+      border: none;
+      cursor: pointer;
+      width: 18%;
+    }
+
+    .sup:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
-<form action="action_page.php" method="post">
-  <!--<div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>-->
 
-  <div class="container">
-    <h1>Login!</h1>
-    <br><hr><br>
-    <label for="regno"><b>Registration Number</b></label>
-    <input type="text" placeholder="eg:MDL17CS001" name="regno" required>
+<body>
+  <div class="imgcontainer">
+    <img src="books.jpg" alt="Books" >
+  </div>
+  <div class="login" >
+    <form method="post" name="MY Form" action="buy&sell.html">
+      <div class="container">
+        <label for="Rno"><b>Registration Number</b></label>
+        <br>
+        <div class="input-icons">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" placeholder="Enter your Registration Number" name="Rno" required>
+          <br>
+        </div>
+        <label for="pwd"><b>Password</b></label>
+        <br>
+        <div class="input-icons">
+          <i class="fa fa-key icon"></i>
+          <input class="input-field" type="password" placeholder="Enter your Password" name="pwd" required>
+          <br>
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px;" checked> Remember me
+        </label>
+        <br>
+        <button type="submit"> Login </button>
+        <br>
+        <span class="pwd">Forgot <a href="#">password?</a></span>
+      </div>
+      <div class="signup">
+        Dont have an account? <input type="Button" class="sup" value="Sign Up"
+          onclick="window.location.href='signup.html'" />
+      </div>
+    </form> 
+  </div>   
+</body>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-  <button type="button" class="cancelbtn">Cancel</button>
-  <span class="psw"><a href="#">Forgot Password?</a></span>
-</div>
-</form>
+</html>
