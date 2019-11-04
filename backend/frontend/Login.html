@@ -102,36 +102,36 @@
     <img src="books.jpg" alt="Books" >
   </div>
   <div class="login" >
-    <form method="post" name="MY Form" action="buy&sell.html">
+    <form method="post" name="MY Form" > 
       <div class="container">
         <label for="Rno"><b>Registration Number</b></label>
         <br>
         <div class="input-icons">
           <i class="fa fa-user icon"></i>
-          <input class="input-field" type="text" placeholder="Enter your Registration Number" name="Rno" required>
+          <input class="input-field" type="text" placeholder="Enter your Registration Number" id="Rno" required>
           <br>
         </div>
         <label for="pwd"><b>Password</b></label>
         <br>
         <div class="input-icons">
           <i class="fa fa-key icon"></i>
-          <input class="input-field" type="password" placeholder="Enter your Password" name="pwd" required>
+          <input class="input-field" type="password" placeholder="Enter your Password" id="pwd" required>
           <br>
         </div>
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px;" checked> Remember me
         </label>
         <br>
-        <button type="submit"> Login </button>
+        <button type="submit" onclick="myFunction()"> Login </button>
         <br>
         <span class="pwd">Forgot <a href="#">password?</a></span>
       </div>
       <div class="signup">
-        Dont have an account? <input type="Button" class="sup" value="Sign Up"
-          onclick="window.location.href='signup.html'" />
+        Dont have an account? <input type="Button" class="sup" value="Sign Up" onclick="window.location.href='signup.html'" />
       </div>
     </form> 
-  </div>   
+  </div>
+  <script src="script2.js"></script>   
 </body>
 
 </html>
