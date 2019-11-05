@@ -15,7 +15,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user:"root",
     password:"",
-    database: "abc"
+    database: "register"
 });
 
 con.connect(function(err){
@@ -35,21 +35,24 @@ app.get('/', function(req,res) {
     res.send("HELLO GOPIKA AND ARUNDHATHI"+req.query.name);
 });
 ``
-app.post("/register", function(req, res) {
+app.get("/register", function(req, res) {
 
-    con.query(`INSERT INTO register VALUES('${req.body.username}', '${req.body.password}', '${req.body.phone}', '${req.body.dept}')`, function(err,result){
-        if(err) throw err;
+    con.query(`INSERT INTO students VALUES('${req.query.username}', '${req.query.password}', '${req.query.phone}', '${req.query.dept}')`, function(err,result){
+        if(err)
+            throw err;
+        
         console.log(result);
-    });
+    }
     res.send("Got");
 })
+app.get("/login", function(req, res){
+    con.query(`SELECT * FROM students WHERE username='${req.query.username}' AND password='${req.query.password}'`,function(err, result){
+        if(err)
+            throw err;
 
-app.get("/reg", function(req, res) {
-    con.query(`INSERT INTO students VALUES('${req.query.username}', '${req.query.password}')`, function(err,result){
-        if(err) throw err;
         console.log(result);
-    });
-    res.send("Recieved");
+    }
+    res.send("Success");
 })
 
 app.listen(3000, function(){
